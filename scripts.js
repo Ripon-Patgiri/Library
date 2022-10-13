@@ -18,7 +18,15 @@ class Book {
 // Declaring Class Library
 // Class to Store Book Objects in an Array.
 class Library {
+  //Initializing Object using Constructor.
   constructor() {
     this.books = [];
+  }
+
+  //Declaring Method to Add a Book to Library.
+  addBook(newBook) {
+    if (!this.isInLibrary(newBook)) {
+      this.books.push(newBook);
+    }
   }
 }
