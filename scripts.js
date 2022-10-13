@@ -29,4 +29,19 @@ class Library {
       this.books.push(newBook);
     }
   }
+  
+  //Method to Remove Book
+  removeBook(title) {
+    this.books = this.books.filter((book) => book.title !== title);
+  }
+  
+  //Method to Get Book
+  getBook(title) {
+    return this.books.find((book) => book.title === newBook.title);
+  }
+
+  //Method to Check if Book already Exists
+  isInLibrary(newBook) {
+    return this.books.some((book) => book.title === newBook.title);
+  }
 }
