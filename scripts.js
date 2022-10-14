@@ -45,3 +45,12 @@ class Library {
     return this.books.some((book) => book.title === newBook.title);
   }
 }
+
+//To do :
+
+// addBookBtn
+// addBookForm
+// Create Basic HTML form to Accept Book Details.
+// Figure out how to store in Object.
+// Create elements and display on the screen. No CSS.
+// Figure out styling and storing later on.
