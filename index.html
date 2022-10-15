@@ -12,9 +12,12 @@
   </head>
   <body>
     <!-- Heading -->
-    <header>Library</header>
+    <header>
+      <h1>Library</h1>
+    </header>
     <!-- Form to Enter Book Details -->
-    <form>
+    <form class="add-book-form" id="addBookForm">
+      <h3>Add New Book</h3>
       <input
         type="text"
         name="title"
@@ -41,8 +44,9 @@
       />
       <label for="isRead">Did you Read the Book ?</label>
       <input type="checkbox" name="isRead" id="isRead" />
-      <button type="submit">Submit</button>
+      <button type="submit" class="submit-btn" id="submitBtn">Submit</button>
     </form>
+    <div class="output-books" id="outputBooks"></div>
 
     <script src="scripts.js"></script>
   </body>
