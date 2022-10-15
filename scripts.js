@@ -53,16 +53,16 @@ const submitBtn = document.getElementById("submitBtn");
 const outputBooks = document.getElementById("outputBooks");
 
 // Display Book
-const bookOutput = (book) => {
+const bookOutput = (Book) => {
   const bookArea = document.createElement("div");
   const title = document.createElement("p");
   const author = document.createElement("p");
   const pages = document.createElement("p");
   const read = document.createElement("p");
 
-  title.textContent = `"${book.title}"`;
-  author.textContent = `"${book.author}"`;
-  pages.textContent = `${book.pages} pages`;
+  title.textContent = `"${Book.title}"`;
+  author.textContent = `"${Book.author}"`;
+  pages.textContent = `${Book.pages} pages`;
 
   if (book.isRead) {
     read.textContent = "Read";
@@ -83,17 +83,20 @@ const getBookFromInput = () => {
   const author = document.getElementById("author").value;
   const pages = document.getElementById("pages").value;
   const isRead = document.getElementById("isRead").checked;
+  console.log("Ran getBookFromInput");
   return new Book(title, author, pages, isRead);
 };
 
-const addBook = (e) => {
+
+const addBooks = (e) => {
   e.preventDefault();
   const newBook = getBookFromInput();
   library.addBook(newBook);
   bookOutput();
+  console.log("Ran addBook");
 };
 
-addBookForm.onsubmit = addBook;
+addBookForm.onsubmit = addBooks;
 //To do :
 
 // Figure out how to store in Object.
