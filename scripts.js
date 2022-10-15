@@ -64,7 +64,7 @@ const bookOutput = (Book) => {
   author.textContent = `"${Book.author}"`;
   pages.textContent = `${Book.pages} pages`;
 
-  if (book.isRead) {
+  if (Book.isRead) {
     read.textContent = "Read";
   } else {
     read.textContent = "Not Read";
@@ -87,12 +87,11 @@ const getBookFromInput = () => {
   return new Book(title, author, pages, isRead);
 };
 
-
 const addBooks = (e) => {
   e.preventDefault();
   const newBook = getBookFromInput();
   library.addBook(newBook);
-  bookOutput();
+  bookOutput(newBook);
   console.log("Ran addBook");
 };
 

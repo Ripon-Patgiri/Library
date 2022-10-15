@@ -23,6 +23,7 @@
       <form class="add-book-form" id="addBookForm">
         <h3>Add New Book</h3>
         <input
+          class="input"
           type="text"
           name="title"
           id="title"
@@ -31,6 +32,7 @@
           maxlength="100"
         />
         <input
+          class="input"
           type="text"
           name="author"
           id="author"
@@ -39,6 +41,7 @@
           maxlength="100"
         />
         <input
+          class="input"
           type="number"
           name="pages"
           id="pages"
@@ -47,7 +50,7 @@
           max="10000"
         />
         <label for="isRead">Did you Read the Book ?</label>
-        <input type="checkbox" name="isRead" id="isRead" />
+        <input class="checkbox" type="checkbox" name="isRead" id="isRead" />
         <button type="submit" class="submit-btn" id="submitBtn">Submit</button>
       </form>
       <div class="output-books" id="outputBooks"></div>
