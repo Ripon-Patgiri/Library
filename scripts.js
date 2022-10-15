@@ -25,9 +25,7 @@ class Library {
 
   //Declaring Method to Add a Book to Library.
   addBook(newBook) {
-    if (!this.isInLibrary(newBook)) {
-      this.books.push(newBook);
-    }
+    this.books.push(newBook);
   }
 
   //Method to Remove Book
@@ -51,24 +49,33 @@ const library = new Library();
 // User Interface
 
 const addBookForm = document.getElementById("addBookForm");
+const submitBtn = document.getElementById("submitBtn");
+const outputBooks = document.getElementById("outputBooks");
 
-// Display Book 
+// Display Book
 const bookOutput = (book) => {
-    const title = document.createElement('p');
-    const author = document.createElement('p');
-    const pages = document.createElement('p');
-    const read = document.createElement('p');
+  const bookArea = document.createElement("div");
+  const title = document.createElement("p");
+  const author = document.createElement("p");
+  const pages = document.createElement("p");
+  const read = document.createElement("p");
 
-    title.textContent = `"${book.title}"`;
-    author.textContent = `"${book.author}"`;
-    pages.textContent = `${book.pages} pages`;
+  title.textContent = `"${book.title}"`;
+  author.textContent = `"${book.author}"`;
+  pages.textContent = `${book.pages} pages`;
 
-    if(book.isRead) {
-        read.textContent = 'Read';
-    } else {
-        read.textContent = 'Not Read';
-    }
-}
+  if (book.isRead) {
+    read.textContent = "Read";
+  } else {
+    read.textContent = "Not Read";
+  }
+
+  bookArea.appendChild(title);
+  bookArea.appendChild(author);
+  bookArea.appendChild(pages);
+  bookArea.appendChild(read);
+  outputBooks.appendChild(bookArea);
+};
 
 // Function to Extract Book Details from Input Form.
 const getBookFromInput = () => {
@@ -79,9 +86,14 @@ const getBookFromInput = () => {
   return new Book(title, author, pages, isRead);
 };
 
+const addBook = (e) => {
+  e.preventDefault();
+  const newBook = getBookFromInput();
+  library.addBook(newBook);
+  bookOutput();
+};
 
 addBookForm.onsubmit = addBook;
-
 //To do :
 
 // Figure out how to store in Object.
