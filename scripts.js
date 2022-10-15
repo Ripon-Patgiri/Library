@@ -29,12 +29,12 @@ class Library {
       this.books.push(newBook);
     }
   }
-  
+
   //Method to Remove Book
   removeBook(title) {
     this.books = this.books.filter((book) => book.title !== title);
   }
-  
+
   //Method to Get Book
   getBook(title) {
     return this.books.find((book) => book.title === newBook.title);
@@ -46,11 +46,44 @@ class Library {
   }
 }
 
+const library = new Library();
+
+// User Interface
+
+const addBookForm = document.getElementById("addBookForm");
+
+// Display Book 
+const bookOutput = (book) => {
+    const title = document.createElement('p');
+    const author = document.createElement('p');
+    const pages = document.createElement('p');
+    const read = document.createElement('p');
+
+    title.textContent = `"${book.title}"`;
+    author.textContent = `"${book.author}"`;
+    pages.textContent = `${book.pages} pages`;
+
+    if(book.isRead) {
+        read.textContent = 'Read';
+    } else {
+        read.textContent = 'Not Read';
+    }
+}
+
+// Function to Extract Book Details from Input Form.
+const getBookFromInput = () => {
+  const title = document.getElementById("title").value;
+  const author = document.getElementById("author").value;
+  const pages = document.getElementById("pages").value;
+  const isRead = document.getElementById("isRead").checked;
+  return new Book(title, author, pages, isRead);
+};
+
+
+addBookForm.onsubmit = addBook;
+
 //To do :
 
-// addBookBtn
-// addBookForm
-// Create Basic HTML form to Accept Book Details.
 // Figure out how to store in Object.
 // Create elements and display on the screen. No CSS.
 // Figure out styling and storing later on.
