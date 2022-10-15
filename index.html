@@ -12,41 +12,46 @@
   </head>
   <body>
     <!-- Heading -->
-    <header>
-      <h1>Library</h1>
+    <header class="header">
+      <div class="container">
+        <h1>Library</h1>
+      </div>
     </header>
+
     <!-- Form to Enter Book Details -->
-    <form class="add-book-form" id="addBookForm">
-      <h3>Add New Book</h3>
-      <input
-        type="text"
-        name="title"
-        id="title"
-        placeholder="Enter Book Title"
-        required
-        maxlength="100"
-      />
-      <input
-        type="text"
-        name="author"
-        id="author"
-        placeholder="Enter Author Name"
-        required
-        maxlength="100"
-      />
-      <input
-        type="number"
-        name="pages"
-        id="pages"
-        placeholder="Enter Pages in Book"
-        required
-        max="10000"
-      />
-      <label for="isRead">Did you Read the Book ?</label>
-      <input type="checkbox" name="isRead" id="isRead" />
-      <button type="submit" class="submit-btn" id="submitBtn">Submit</button>
-    </form>
-    <div class="output-books" id="outputBooks"></div>
+    <main class="main container">
+      <form class="add-book-form" id="addBookForm">
+        <h3>Add New Book</h3>
+        <input
+          type="text"
+          name="title"
+          id="title"
+          placeholder="Enter Book Title"
+          required
+          maxlength="100"
+        />
+        <input
+          type="text"
+          name="author"
+          id="author"
+          placeholder="Enter Author Name"
+          required
+          maxlength="100"
+        />
+        <input
+          type="number"
+          name="pages"
+          id="pages"
+          placeholder="Enter Pages in Book"
+          required
+          max="10000"
+        />
+        <label for="isRead">Did you Read the Book ?</label>
+        <input type="checkbox" name="isRead" id="isRead" />
+        <button type="submit" class="submit-btn" id="submitBtn">Submit</button>
+      </form>
+      <div class="output-books" id="outputBooks"></div>
+    </main>
 
     <script src="scripts.js"></script>
   </body>
