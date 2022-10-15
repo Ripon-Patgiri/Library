@@ -1,3 +1,5 @@
+/* CSS RESET */
+
 *,
 *::before,
 *::after {
@@ -7,7 +9,24 @@
 }
 
 body {
-    color: wheat;
-    background-color: darkslategrey;
-    font-family: 'Titillium Web', sans-serif;
+  color: wheat;
+  background-color: darkslategrey;
+  font-family: "Titillium Web", sans-serif;
+}
+
+button,
+input {
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  cursor: pointer;
+  outline: none;
+  color: black;
+}
+
+input[type="text"],
+input[type="number"] {
+  cursor: text;
 }

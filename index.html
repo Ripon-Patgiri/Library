@@ -8,10 +8,41 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap");
     </style>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!-- Heading -->
     <header>Library</header>
+    <!-- Form to Enter Book Details -->
+    <form>
+      <input
+        type="text"
+        name="title"
+        id="title"
+        placeholder="Enter Book Title"
+        required
+        maxlength="100"
+      />
+      <input
+        type="text"
+        name="author"
+        id="author"
+        placeholder="Enter Author Name"
+        required
+        maxlength="100"
+      />
+      <input
+        type="number"
+        name="pages"
+        id="pages"
+        placeholder="Enter Pages in Book"
+        required
+        max="10000"
+      />
+      <label for="isRead">Did you Read the Book ?</label>
+      <input type="checkbox" name="isRead" id="isRead" />
+      <button type="submit">Submit</button>
+    </form>
 
     <script src="scripts.js"></script>
   </body>
