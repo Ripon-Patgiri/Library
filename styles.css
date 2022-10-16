@@ -1,3 +1,8 @@
+:root {
+  --bgClr: #E8E884;
+  --txtClr: #714B99;
+}
+
 /* CSS RESET */
 
 *,
@@ -9,8 +14,8 @@
 }
 
 body {
-  color: wheat;
-  background-color: darkslategrey;
+  color: var(--txtClr);
+  background-color: var(--bgClr);
   font-family: "Titillium Web", sans-serif;
 }
 
@@ -29,4 +34,20 @@ input {
 input[type="text"],
 input[type="number"] {
   cursor: text;
+}
+
+/* HEADER */
+
+.header {
+  background-color: #9C9B30;
+  color: #D6B0FF;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+  margin: 4px;
+  border-radius: 5px;
+}
+
+.container {
+  text-align: center;
+  padding: 10px 0;
+  font-size: 24px;
 }
